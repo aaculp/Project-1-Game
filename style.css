@@ -1,0 +1,80 @@
+body {
+  background-color: black;
+}
+
+img {
+  width: 100%;
+  height: 675px;
+}
+
+.container {
+  position: relative;
+}
+
+#rick {
+  position: absolute;
+  top:10px;
+  left: 600px;
+  right:0;
+  width: 60px;
+  height: 80px;
+  background-image: url("images/picklerick.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.morty {
+  position: absolute;
+  bottom:0;
+  left: 600px;
+  width: 60px;
+  height: 80px;
+  background-image: url("images/Morty.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  animation: move 4s linear infinite;
+}
+
+#rocket {
+  position: absolute;
+  top:10px;
+  left:600px;
+  right:0;
+  width: 60px;
+  height: 200px;
+  background-image: url("images/rocket1.png");
+  background-repeat: no-repeat;
+  background-size: 25%;
+  visibility: visible;
+  animation: moving 4s linear;
+}
+
+@keyframes move {
+    0%{
+   bottom: 0%;
+    }
+  50% {
+    bottom: 50%;
+  }
+  75% {
+    bottom: 75%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes moving {
+  0%{
+   top: 0%;
+    }
+  50% {
+    top: 50%;
+  }
+  75% {
+    top: 75%;
+  }
+  100% {
+    top: 95%;
+  }
+}
