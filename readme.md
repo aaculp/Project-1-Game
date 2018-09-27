@@ -8,8 +8,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 | Day | Deliverable | Status
 | --- | :---: |  :---:
-|Day 1: Wed| Game Init / B1 / B2| Incomplete
-|Day 2: Thu| Game Init / B4 / B3| Incomplete
+|Day 1: Wed| Game Init / B1 / B2| Complete
+|Day 2: Thu| Game Init / B4 / B3| B3 Complete B4 Incomplete
 |Day 3: Fri| Game Init / C | Incomplete
 |Day 4: Sat| Win Logic | Incomplete
 |Day 5: Sun| Landing Page / Game Reset / Post MVP | Incomplete
@@ -22,14 +22,15 @@ My project will be a Space Invaders replica but themed with Rick and Morty. The 
 
 ## Wireframes
 ---
-![Wireframe Logic] https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4266.jpg "Wireframe Logic"
-![Wireframe Layout] https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4265.jpg "Wireframe Layout"
-![Wireframe MVP] https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4262.jpg "Wireframe MVP"
-![Wireframe Post MVP] https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4263.jpg "Wireframe Post MVP"
+[Wireframe Outline] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4261.jpg"
+[Wireframe Layout] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4265.jpg"
+[Wireframe MVP] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4262.jpg"
+[Wireframe Post MVP] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4263.jpg"
+[Wireframe Logic] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4266.jpg"
 
 ## Priority Matrix
 ---
-![Wireframe Priority Matrix] https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4264.jpg "Wireframe Priority Matrix"
+[Wireframe Priority Matrix] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4264.jpg" 
 
 ### MVP/PostMVP - 5min
 ---
@@ -85,14 +86,14 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time MVP | Estimated Time Post MVP | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: | :---:|
 | Landing Page | L |  | 2.5hrs |  |  |
-| Moving Rick L/R | H | 4hrs|  |  |  |
-| Creating Random Morty | H | 3hrs |  |  |  |
-| Move Morty Towards Rick | M |  | 4hrs |  |  |
-| Create Missles from Rick | H | 5hrs |  |  |  |
+| Moving Rick L/R | H | 4hrs|  | 3hrs | 3hrs |
+| Creating Random Morty | H | 3hrs |  | 1hr | 1hr |
+| Move Morty Towards Rick | M |  | 4hrs | 1hr | 1hr |
+| Create Missles from Rick | H | 5hrs |  | 2hrs |  |
 | Elminate Morty | H | 4hrs |  |  |  |
 | Win Game Logic | H | 3hrs |  |  |  |
 | Game Reset | L |  | 2hrs |  |  |
-| Total |  |  19hrs | 9.5hrs |  |  |
+| Total |  |  19hrs | 9.5hrs | 7hrs |  |
 
 
 ## Helper Functions
