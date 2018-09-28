@@ -23,9 +23,13 @@ My project will be a Space Invaders replica but themed with Rick and Morty. The 
 ## Wireframes
 ---
 [Wireframe Outline] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4261.jpg"
+
 [Wireframe Layout] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4265.jpg"
+
 [Wireframe MVP] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4262.jpg"
+
 [Wireframe Post MVP] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4263.jpg"
+
 [Wireframe Logic] "https://res.cloudinary.com/aaronculp/image/upload/v1537901773/Project%201%20Wireframes/IMG_4266.jpg"
 
 ## Priority Matrix
@@ -89,7 +93,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Moving Rick L/R | H | 4hrs|  | 3hrs | 3hrs |
 | Creating Random Morty | H | 3hrs |  | 1hr | 1hr |
 | Move Morty Towards Rick | M |  | 4hrs | 1hr | 1hr |
-| Create Missles from Rick | H | 5hrs |  | 2hrs |  |
+| Create Missles from Rick | H | 5hrs |  | 5hrs | 5hrs |
 | Elminate Morty | H | 4hrs |  |  |  |
 | Win Game Logic | H | 3hrs |  |  |  |
 | Game Reset | L |  | 2hrs |  |  |

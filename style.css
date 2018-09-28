@@ -13,26 +13,14 @@ img {
 
 #rick {
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 600px;
-  right:0;
+  right: 0;
   width: 60px;
   height: 80px;
   background-image: url("images/picklerick.png");
   background-repeat: no-repeat;
   background-size: 50%;
-}
-
-.morty {
-  position: absolute;
-  bottom:0;
-  left: 600px;
-  width: 60px;
-  height: 80px;
-  background-image: url("images/Morty.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  animation: move 4s linear infinite;
 }
 
 #rocket {
@@ -45,8 +33,30 @@ img {
   background-image: url("images/rocket1.png");
   background-repeat: no-repeat;
   background-size: 25%;
-  visibility: visible;
-  animation: moving 4s linear;
+  /* rocketTop 10px
+rocketBottom 469px
+rocketRight 0px
+rocketLeft 600px
+rocketWidth 60px
+rocketHeight 200px */
+}
+
+.morty {
+  position: absolute;
+  bottom:0;
+  left: 600px;
+  width: 60px;
+  height: 80px;
+  background-image: url("images/Morty.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  /*animation: move 4s linear infinite;*/
+  /*mortyTop 618px
+mortyBottom 0px
+mortyRight 171px
+mortyLeft 600px
+mortyWidth 60px
+mortyHeight 80px*/
 }
 
 @keyframes move {
@@ -66,15 +76,15 @@ img {
 
 @keyframes moving {
   0%{
-   top: 0%;
+   top: 10px;
     }
   50% {
-    top: 50%;
+    top: 309px;
   }
   75% {
-    top: 75%;
+    top: 463px;
   }
   100% {
-    top: 95%;
+    top: 620px;
   }
 }
