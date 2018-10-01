@@ -1,4 +1,4 @@
-  let morty = document.createElement('div')
+  const morty = document.createElement('div')
   const body = document.body
   morty.classList.add('morty')
   body.append(morty)
@@ -18,42 +18,9 @@ function createMorty() {
   }, 5000)
 }
 
-  for(i = 0; i < 5; i++) {
+for(i = 0; i < 5; i++) {
   createMorty()
 }
-
-// let mortyCreate = setInterval(createMorty(), 5000)
-// function stopMorty() {
-//   clearInterval(mortyCreate)
-// }
-
-
-// function newMorty() {
-//   var morty = document.querySelectorAll('.morty');
-//   var count = 0;
-//   var mortyCreate = setInterval(createMorty, 5000);
-//   function stopMorty() {
-//     if (count == 5) {
-//       clearInterval(mortyCreate);
-//     } else {
-//       count++;
-//     }
-//   }
-// }
-
-// let numberMorty = document.querySelectorAll('.morty')
-// let mortyCreate = setInterval(function(){
-//   for(i = 0; i < 5; i++) {
-//     // createMorty()
-//     if (numberMorty.length >= 5) {
-//       // createMorty()
-//       console.log('This worked!')
-//     } else {
-//       clearInterval(mortyCreate)
-//       console.log('This isnt working')
-//     }
-//   }
-// })
 
 document.addEventListener('keydown', moveRick)
 document.addEventListener('keyup', shootRocket)
@@ -110,9 +77,7 @@ function firstCollision(rocket, morty) {
 
   if (mortyTop < rocketTop + rocketHeight && mortyTop + mortyHeight > rocketTop &&
     mortyLeft < rocketLeft + rocketWidth && mortyLeft + mortyWidth > rocketLeft) {
-  setInterval(function(){
-    morty.remove()
-  },100)
+  morty.remove()
   rocket.style.top = 10 + 'px'
   rocket.style.transition = 'none'
   setTimeout(function(){
@@ -145,6 +110,7 @@ function secondCollision(rocket, body) {
     rocket.style.transition = 'top 1s linear'
     },0)
   }
+  allcollapsed()
 }
 
 function thirdCollision(rick, morty) {
@@ -174,7 +140,9 @@ function thirdCollision(rick, morty) {
     rickLeft <= mortyLeft + mortyWidth && rickLeft + rickWidth >= mortyLeft) {
   alert('You Lose!')
   }
+  allcollapsed()
 }
+
 
 function fourthCollision(body, morty) {
  let bodyHeight = window.getComputedStyle(body, null).getPropertyValue("height");
@@ -196,6 +164,7 @@ function fourthCollision(body, morty) {
  if (bodyHeight < mortyBottom + mortyHeight) {
   alert('You Lose!')
   }
+  allcollapsed()
 }
 
   function allcollapsed () {
@@ -207,9 +176,15 @@ function fourthCollision(body, morty) {
   }
 
     setInterval(function(){
+    firstCollision(rocket, morty)
     secondCollision(rocket, body)
     thirdCollision(rick, morty)
     fourthCollision(body, morty)
-    firstCollision(rocket, morty)
-    allcollapsed()
   }, 100)
+
+// function playGame() {
+//    firstCollision(rocket, morty)
+//     secondCollision(rocket, body)
+//     thirdCollision(rick, morty)
+//     fourthCollision(body, morty)
+// }
