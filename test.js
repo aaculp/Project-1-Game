@@ -31,7 +31,6 @@ function shootRocket(event) {
   event.preventDefault()
   if (event.keyCode == 32) {
     rocket.style.top = 635 + 'px'
-    console.log('space')
   }
 }
 
@@ -42,13 +41,11 @@ function moveRick(event) {
     rickMove += 50;
     rocket.style.left = rickMove + 'px'
     rick.style.left = rickMove + 'px'
-    console.log('right')
   } else if (event.keyCode == 37) {
     event.preventDefault()
     rickMove += -50;
     rocket.style.left = rickMove + 'px'
     rick.style.left = rickMove + 'px'
-    console.log('left')
   }
 }
 
@@ -181,10 +178,3 @@ function fourthCollision(body, morty) {
     thirdCollision(rick, morty)
     fourthCollision(body, morty)
   }, 100)
-
-// function playGame() {
-//    firstCollision(rocket, morty)
-//     secondCollision(rocket, body)
-//     thirdCollision(rick, morty)
-//     fourthCollision(body, morty)
-// }
