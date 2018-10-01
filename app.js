@@ -1,60 +1,40 @@
-// function creaty morty div & adding it to body
+window.onload = function () {
+  //set const variables
+const body = document.body;
+
 function createMorty() {
-  const body = document.body
-  var morty = document.createElement('div')
+  let morty = document.createElement('div')
   morty.classList.add('morty')
   body.append(morty)
-  // lets me grab css properties that arent defined
-  // ORDER = variable = grabs computed style from div(morty) => property value thats needed
-  let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
-  let mortyBottom = window.getComputedStyle(morty, null).getPropertyValue("bottom");
-  let mortyRight = window.getComputedStyle(morty, null).getPropertyValue("right");
-  let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
-  let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
-  let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
-  //Grab from MORTY CSS
   // randomly moves morty
   function moveMorty(morty) {
-    morty.style.bottom = (Math.random() * window.innerLength) + 'px'
-    // morty.style.left = (Math.random() * window.innerWidth) + 'px'
+    morty.style.bottom = Math.random() * window.innerLength + 'px'
+    morty.style.left = Math.random() * window.innerWidth + 'px'
   }
   // how long it takes morty to move up
   setInterval(function() {
     moveMorty(morty)
-  }, 4000)
+  }, 5000)
 }
-// creates more morty
-for(i = 0; i < 5; i++) {
-  createMorty()
-}
-// ORDER = variable = grabs computed style from div(morty) => property value thats needed
-let rocketTop = window.getComputedStyle(rocket, null).getPropertyValue("top");
-let rocketBottom = window.getComputedStyle(rocket, null).getPropertyValue("bottom");
-let rocketRight = window.getComputedStyle(rocket, null).getPropertyValue("right");
-let rocketLeft = window.getComputedStyle(rocket, null).getPropertyValue("left");
-let rocketWidth = window.getComputedStyle(rocket, null).getPropertyValue("width");
-let rocketHeight = window.getComputedStyle(rocket, null).getPropertyValue("height");
-let rocketAnimation = window.getComputedStyle(rocket, null).getPropertyValue('moving')
-console.log(rocketAnimation)
-// grab from Rocket CSS
-
-document.addEventListener('keypress', shootRocket)
-let rocketMove = document.getElementById('rocket')
+  for (let i=0; i < 5; i++) {
+    createMorty();
+  }
 
 document.addEventListener('keydown', moveRick)
+document.addEventListener('keyup', shootRocket)
 let rickMove = 600;
-// moves rocket animation when you hit space bar
+
 function shootRocket(event) {
+  let rocket = document.querySelector('#rocket')
   event.preventDefault()
   if (event.keyCode == 32) {
-    rocket.style.animation = 'moving 1s linear'
+    rocket.style.top = 635 + 'px'
     console.log('space')
-  } else if (rocket.style.animation == 618) {
-    console.log('hit')
   }
 }
-// moves rick ATTACHED with rocket LEFT/RIGHT arrows
+
 function moveRick(event) {
+  let rick = document.querySelector('#rick')
   if (event.keyCode == 39) {
     event.preventDefault()
     rickMove += 50;
@@ -67,64 +47,91 @@ function moveRick(event) {
     rocket.style.left = rickMove + 'px'
     rick.style.left = rickMove + 'px'
     console.log('left')
-  } else if (rickMove == 0 || rickMove == 1200){
-    document.removeEventlistener('keydown', moveRick)
   }
 }
 
+setInterval(function(){
+allcollapsed ();
+}, 250)
 
-// function collision() {
-
-// let rocketLeft = window.getComputedStyle(rocket, null).getPropertyValue("left");
-// let rocketBottom = window.getComputedStyle(rocket, null).getPropertyValue("bottom");
-// let rocketWidth = window.getComputedStyle(rocket, null).getPropertyValue("width");
-// let rocketHeight = window.getComputedStyle(rocket, null).getPropertyValue("height");
-// let rocketAnimation = window.getComputedStyle(rocket, null).getPropertyValue('animation')
-
-// let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
-// let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
-// let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
-// let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
-
-// if (rocketAnimation = mortyTop &&
-//     rocketAnimation = mortyLeft &&
-//     rocketAnimation = mortyRight) {
-//   console.log('It worked!')
-// } else {
-//   console.log('This is not working!')
-// }
-// }
-
-  // if (rocketLeft < mortyLeft + mortyWidth &&
-  //     rocketLeft + rocketWidth > mortyLeft &&
-  //     rocketBottom < mortyTop + mortyHeight &&
-  //     rocketBottom + rocketHeight > mortyTop) {
-  //     console.log('hit!')
-  // } else {
-  //   console.log('This code isnt working!')
-  // }
-//   //bottom of rocket = top of morty &&
-//   //R/L of morty == R/L of rocket
-//   // then console log hit
-// function collision() {
-//   if(mortyLeft < rocketLeft + rocketWidth &&
-//      mortyLeft + mortyWidth > rocketLeft &&
-//      mortyTop < rocketTop + rocketHeight &&
-//      mortyTop + mortyHeight > rocketTop) {
-//     console.log('hit!')
-//   } else {
-//     console.log('This code isnt working!')
-//   }
-// }
-
-
-function playGame() {
-  createMorty()
-  // moveRick()
-  // shootRocket()
-  // collision()
+function allcollapsed () {
+  let morty = document.querySelectorAll('.morty');
+  let rick = document.querySelector('.rick')
+  let rocket = document.querySelector('#rocket');
+  for (let i=0; i < 5; i++) {
+    gameLogic(rocket, morty[i]);
+  }
 }
-playGame()
+
+let morty = document.querySelectorAll('.morty');
+let rick = document.querySelector('.rick')
+let rocket = document.querySelector('#rocket');
+
+function gameLogic(rick, rocket, morty, bottom) {
+ let rickTop = window.getComputedStyle(rick, null).getPropertyValue("top");
+ let rickLeft = window.getComputedStyle(rick, null).getPropertyValue("left");
+ let rickHeight = window.getComputedStyle(rick, null).getPropertyValue("height");
+ let rickWidth = window.getComputedStyle(rick, null).getPropertyValue("width");
+ let rickBottom = window.getComputedStyle(rick, null).getPropertyValue("bottom");
+ rickTop = parseInt(rickTop.split('px')[0])
+ rickLeft = parseInt(rickLeft.split('px')[0])
+ rickHeight = parseInt(rickHeight.split('px')[0])
+ rickWidth = parseInt(rickWidth.split('px')[0])
+ rickBottom = parseInt(rickBottom.split('px')[0])
+
+ let rocketTop = window.getComputedStyle(rocket, null).getPropertyValue("top");
+ let rocketLeft = window.getComputedStyle(rocket, null).getPropertyValue("left");
+ let rocketHeight = window.getComputedStyle(rocket, null).getPropertyValue("height");
+ let rocketWidth = window.getComputedStyle(rocket, null).getPropertyValue("width");
+ let rocketBottom = window.getComputedStyle(rocket, null).getPropertyValue("bottom");
+ rocketTop = parseInt(rocketTop.split('px')[0])
+ rocketLeft = parseInt(rocketLeft.split('px')[0])
+ rocketHeight = parseInt(rocketHeight.split('px')[0])
+ rocketWidth = parseInt(rocketWidth.split('px')[0])
+ rocketBottom = parseInt(rocketBottom.split('px')[0])
+
+ let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
+ let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
+ let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
+ let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
+ let mortyBottom = window.getComputedStyle(morty, null).getPropertyValue("bottom");
+ mortyTop = parseInt(mortyTop.split('px')[0])
+ mortyLeft = parseInt(mortyLeft.split('px')[0])
+ mortyHeight = parseInt(mortyHeight.split('px')[0])
+ mortyWidth = parseInt(mortyWidth.split('px')[0])
+ mortyBottom = parseInt(mortyBottom.split('px')[0])
+
+ let bottomHeight = window.getComputedStyle(body, null).getPropertyValue("height");
+ let bottomWidth = window.getComputedStyle(body, null).getPropertyValue("Width");
+ bottomHeight = parseInt(bottomHeight.split('px')[0]) //679
+ bottomWidth = parseInt(bottomWidth.split('px')[0]) //820
+
+ if (mortyTop < rocketTop + rocketHeight && mortyTop + mortyHeight > rocketTop &&
+    mortyLeft < rocketLeft + rocketWidth && mortyLeft + mortyWidth > rocketLeft) {
+  morty.remove()
+  rocket.style.top = 10 + 'px'
+  rocket.style.transition = 'none'
+  setTimeout(function(){
+  rocket.style.transition = 'top 1s linear'
+  },0)
+  //if rocket hits bottom, rocket disappears then top of 10px
+  } else if (bottomHeight < rocketTop + rocketHeight) {
+  rocket.style.top = 10 + 'px'
+  rocket.style.transition = 'none'
+  setTimeout(function(){
+  rocket.style.transition = 'top 1s linear'
+    },0)
+  } else if (rickBottom < mortyBottom + mortyHeight && rickBottom + rickHeight > mortyBottom &&
+    rickLeft <= mortyLeft + mortyWidth && rickLeft + rickWidth >= mortyLeft) {
+  alert('You Lose!')
+  }
+}
+  setInterval(function(){
+   gameLogic(rocket, morty)
+  }, 0)
+
+}
+
 
 
 

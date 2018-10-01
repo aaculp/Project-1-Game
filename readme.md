@@ -10,8 +10,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | --- | :---: |  :---:
 |Day 1: Wed| Game Init / B1 / B2| Complete
 |Day 2: Thu| Game Init / B4 / B3| B3 Complete B4 Incomplete
-|Day 3: Fri| Game Init / C | Incomplete
-|Day 4: Sat| Win Logic | Incomplete
+|Day 3: Fri| Game Init / C | Complete
+|Day 4: Sat| Win Logic | Complete
 |Day 5: Sun| Landing Page / Game Reset / Post MVP | Incomplete
 |Day 6: Mon| Present | Incomplete
 
@@ -94,10 +94,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Creating Random Morty | H | 3hrs |  | 1hr | 1hr |
 | Move Morty Towards Rick | M |  | 4hrs | 1hr | 1hr |
 | Create Missles from Rick | H | 5hrs |  | 5hrs | 5hrs |
-| Elminate Morty | H | 4hrs |  |  |  |
-| Win Game Logic | H | 3hrs |  |  |  |
+| Elminate Morty | H | 4hrs |  | 10hrs | 6hrs |
+| Win Game Logic | H | 3hrs |  | 3hrs | 3hrs |
 | Game Reset | L |  | 2hrs |  |  |
-| Total |  |  19hrs | 9.5hrs | 7hrs |  |
+| Total |  |  19hrs | 9.5hrs | 23hrs |  |
 
 
 ## Helper Functions
@@ -121,20 +121,45 @@ Helper functions should be generic enought that they can be reused in other appl
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function firstCollision(rocket, morty) {
+ let rocketTop = window.getComputedStyle(rocket, null).getPropertyValue("top");
+ let rocketLeft = window.getComputedStyle(rocket, null).getPropertyValue("left");
+ let rocketHeight = window.getComputedStyle(rocket, null).getPropertyValue("height");
+ let rocketWidth = window.getComputedStyle(rocket, null).getPropertyValue("width");
+ let rocketBottom = window.getComputedStyle(rocket, null).getPropertyValue("bottom");
+ rocketTop = parseInt(rocketTop.split('px')[0])
+ rocketLeft = parseInt(rocketLeft.split('px')[0])
+ rocketHeight = parseInt(rocketHeight.split('px')[0])
+ rocketWidth = parseInt(rocketWidth.split('px')[0])
+ rocketBottom = parseInt(rocketBottom.split('px')[0])
+
+ let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
+ let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
+ let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
+ let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
+ let mortyBottom = window.getComputedStyle(morty, null).getPropertyValue("bottom");
+ mortyTop = parseInt(mortyTop.split('px')[0])
+ mortyLeft = parseInt(mortyLeft.split('px')[0])
+ mortyHeight = parseInt(mortyHeight.split('px')[0])
+ mortyWidth = parseInt(mortyWidth.split('px')[0])
+ mortyBottom = parseInt(mortyBottom.split('px')[0])
+
+  if (mortyTop < rocketTop + rocketHeight && mortyTop + mortyHeight > rocketTop &&
+    mortyLeft < rocketLeft + rocketWidth && mortyLeft + mortyWidth > rocketLeft) {
+  morty.remove()
+  rocket.style.top = 10 + 'px'
+  rocket.style.transition = 'none'
+  setTimeout(function(){
+  rocket.style.transition = 'top 1s linear'
+  },0)
+  }
 }
 ```
 
 ## Change Log
 ---
- Use this section to document what changes were made and the reasoning behind those changes.  
+I never made it to my post MVP so the changes that were made were the planning details to only finish the MVP solutions
 
 ## Issues and Resolutions
 ---
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
-# My-First-Project
+ The big issue I had was getting the missle to elimiate the Morty. Once I figured that out my MVP was complete. I then tried to move to my Post MVP but couldn't eliminate the rest of the Mortys so that resolution was never solved.

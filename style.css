@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  border: 3px solid white;
 }
 
 img {
@@ -29,10 +30,11 @@ img {
   left:600px;
   right:0;
   width: 60px;
-  height: 200px;
+  height: 80px;
   background-image: url("images/rocket1.png");
   background-repeat: no-repeat;
   background-size: 25%;
+  transition: top 1s linear;
   /* rocketTop 10px
 rocketBottom 469px
 rocketRight 0px
@@ -43,14 +45,14 @@ rocketHeight 200px */
 
 .morty {
   position: absolute;
-  bottom:0;
+  bottom: 0;
   left: 600px;
   width: 60px;
   height: 80px;
   background-image: url("images/Morty.png");
   background-repeat: no-repeat;
   background-size: 50%;
-  /*animation: move 4s linear infinite;*/
+  animation: move 5s linear infinite;
   /*mortyTop 618px
 mortyBottom 0px
 mortyRight 171px
@@ -71,20 +73,5 @@ mortyHeight 80px*/
   }
   100% {
     bottom: 100%;
-  }
-}
-
-@keyframes moving {
-  0%{
-   top: 10px;
-    }
-  50% {
-    top: 309px;
-  }
-  75% {
-    top: 463px;
-  }
-  100% {
-    top: 620px;
   }
 }
