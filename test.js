@@ -18,13 +18,42 @@ function createMorty() {
   }, 5000)
 }
 
-for(i = 0; i < 5; i++) {
+  for(i = 0; i < 5; i++) {
   createMorty()
 }
-// setInterval(function() {
-//   createMorty()
-// }, 5000)
-// clearInterval(mortyCreate)
+
+// let mortyCreate = setInterval(createMorty(), 5000)
+// function stopMorty() {
+//   clearInterval(mortyCreate)
+// }
+
+
+// function newMorty() {
+//   var morty = document.querySelectorAll('.morty');
+//   var count = 0;
+//   var mortyCreate = setInterval(createMorty, 5000);
+//   function stopMorty() {
+//     if (count == 5) {
+//       clearInterval(mortyCreate);
+//     } else {
+//       count++;
+//     }
+//   }
+// }
+
+// let numberMorty = document.querySelectorAll('.morty')
+// let mortyCreate = setInterval(function(){
+//   for(i = 0; i < 5; i++) {
+//     // createMorty()
+//     if (numberMorty.length >= 5) {
+//       // createMorty()
+//       console.log('This worked!')
+//     } else {
+//       clearInterval(mortyCreate)
+//       console.log('This isnt working')
+//     }
+//   }
+// })
 
 document.addEventListener('keydown', moveRick)
 document.addEventListener('keyup', shootRocket)
@@ -81,7 +110,9 @@ function firstCollision(rocket, morty) {
 
   if (mortyTop < rocketTop + rocketHeight && mortyTop + mortyHeight > rocketTop &&
     mortyLeft < rocketLeft + rocketWidth && mortyLeft + mortyWidth > rocketLeft) {
-  morty.remove()
+  setInterval(function(){
+    morty.remove()
+  },100)
   rocket.style.top = 10 + 'px'
   rocket.style.transition = 'none'
   setTimeout(function(){
@@ -144,17 +175,41 @@ function thirdCollision(rick, morty) {
   alert('You Lose!')
   }
 }
-  setInterval(function(){
-  firstCollision(rocket, morty)
-  secondCollision(rocket, body)
-  thirdCollision(rick, morty)
-  }, 0)
+
+function fourthCollision(body, morty) {
+ let bodyHeight = window.getComputedStyle(body, null).getPropertyValue("height");
+ let bodyWidth = window.getComputedStyle(body, null).getPropertyValue("width");
+ bodyHeight = parseInt(bodyHeight.split('px')[0]) //679
+ bodyWidth = parseInt(bodyWidth.split('px')[0]) //820
+
+ let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
+ let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
+ let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
+ let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
+ let mortyBottom = window.getComputedStyle(morty, null).getPropertyValue("bottom");
+ mortyTop = parseInt(mortyTop.split('px')[0])
+ mortyLeft = parseInt(mortyLeft.split('px')[0])
+ mortyHeight = parseInt(mortyHeight.split('px')[0])
+ mortyWidth = parseInt(mortyWidth.split('px')[0])
+ mortyBottom = parseInt(mortyBottom.split('px')[0])
+
+ if (bodyHeight < mortyBottom + mortyHeight) {
+  alert('You Lose!')
+  }
+}
 
   function allcollapsed () {
     let rocket = document.querySelector('#rocket')
     let morty = document.querySelectorAll('.morty')
-    for (let i=0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
     firstCollision(rocket, morty[i]);
-    morty.remove()
     }
   }
+
+    setInterval(function(){
+    secondCollision(rocket, body)
+    thirdCollision(rick, morty)
+    fourthCollision(body, morty)
+    firstCollision(rocket, morty)
+    allcollapsed()
+  }, 100)
