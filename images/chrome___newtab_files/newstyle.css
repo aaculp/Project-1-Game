@@ -1,0 +1,268 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* SEARCH */
+.new-style .search-engine .ym-wbox {
+    max-width: 735px;
+}
+.new-style .search-engine .ym-wbox > form {
+    border-radius: 0;
+}
+.new-style .search-engine .submit {
+    background: none;
+    color: #000;
+    font-size: 15px;
+}
+.new-style .search-engine .yandex-logo,
+.new-style .search-engine .yandex-logo-en,
+.new-style .search-engine .google-logo,
+.new-style .search-engine .yahoo-logo,
+.new-style .search-engine .bing-logo,
+.new-style .search-engine .baidu-logo,
+.new-style .search-engine .mail-logo {
+    background-image: url('/i/icons-search-engines-24-new.png');
+    height: 100%;
+    background-position-y: center;
+    margin: 0;
+}
+
+/* TOP PANEL */
+.new-style #header {
+    background: none;
+}
+.new-style #header .menu:hover {
+    border-bottom: none;
+}
+.new-style #header .block-menu .menu > a {
+    background: url('/i/icon-menu-white.png') no-repeat;
+    margin-top: -12px;
+    margin-right: -4px;
+    width: 48px;
+    height: 45px;
+    padding: 0;
+}
+.new-style #header .block-menu .menu > a:hover {
+    background-position: inherit;
+}
+
+.new-style #header .main-logo {
+    background: url('/i/logo-only-new.png') no-repeat;
+    background-size: 34px 42px;
+    width: 34px;
+    height: 42px;
+}
+.new-style .line-status {
+    display: none;
+}
+
+/* BOOKMARKS */
+.new-style.register #bookmarks .page {
+    max-width: 741px;
+    margin: 0 auto;
+}
+.new-style.register #bookmarks .view-sketch.page {
+    padding-top: 15px;
+}
+
+.new-style.register #bookmarks .view-tiles.page,
+.new-style.register #bookmarks .view-list.page{
+    margin-top: 15px;
+}
+.new-style #bookmarks .dd-left,
+.new-style #bookmarks .dd-right {
+    min-width: 3px;
+}
+.new-style #bookmarks .view-sketch .wrapper,
+.new-style #bookmarks .view-sketch .wrapper img {
+    border-radius: 0;
+}
+.new-style #bookmarks .view-sketch .item-box {
+    margin-bottom: 6px;
+}
+
+.new-style #bookmarks .view-sketch .item .desc {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4));
+}
+.new-style #bookmarks .view-sketch .item .title img {
+    display: none;
+}
+.new-style #bookmarks .view-sketch .item .title {
+    color: #fff;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    padding-right: 7px;
+    text-align: center;
+}
+.new-style #bookmarks .view-sketch .item .hider {
+    display: none;
+}
+.new-style #bookmarks .view-sketch .item .manager {
+    width: 100%;
+    height: 20px;
+    padding: 4px 3px;
+    background: url('/i/icons-background.png') no-repeat top right;
+    top: 0;
+}
+.new-style #bookmarks .view-sketch .item .desc {
+    overflow: visible;
+}
+.new-style #bookmarks .view-sketch .item .wrapper:hover .title {
+    /*color: rgba(255,255,255,0.6);*/
+}
+.new-style #bookmarks .view-sketch .item .manager a.edit,
+.new-style #bookmarks .view-sketch .item .manager a.edit:hover {
+    background: url('/i/icons-white-2.png') no-repeat 0px 0px;
+}
+.new-style #bookmarks .view-sketch .item .manager a.delete,
+.new-style #bookmarks .view-sketch .item .manager a.delete:hover {
+    background: url('/i/icons-white-2.png') no-repeat -2px -42px;
+}
+.new-style #bookmarks .view-sketch .item .manager a.screenshotUpdate,
+.new-style #bookmarks .view-sketch .item .manager a.screenshotUpdate:hover {
+    background: url('/i/icon-update-white.png') no-repeat;
+}
+.new-style #bookmarks .view-sketch .item .manager a:hover {
+    opacity: 0.8;
+}
+
+.new-style #bookmarks .view-sketch .item .manager {
+    pointer-events: none;
+}
+.new-style #bookmarks .view-sketch .item .manager a {
+    pointer-events: initial;
+}
+.new-style #group .ym-wrapper {
+    padding-bottom: 0;
+}
+.new-style .search-engine {
+    margin-left: 45px;
+    margin-right: 45px;
+}
+@media screen and (max-width: 760px) {
+    .new-style .search-engine {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}
+@media screen and (max-width: 590px) {
+    .new-style .search-engine {
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+}
+.new-style #widgets > .ym-wbox {
+    margin: 0 auto;
+    max-width: 741px;
+    padding-left: 42px;
+    padding-right: 42px;
+}
+
+@media screen and (max-width: 760px) {
+    .new-style #widgets > .ym-wbox {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media screen and (max-width: 590px) {
+    .new-style #widgets > .ym-wbox {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.new-style #widgets .mini-wcolumn {
+    margin: 3px;
+}
+.new-style .widget .widget-wrapper {
+    margin: 3px 3px 6px;
+}
+.new-style .widget .widget-wrapper {
+    height: 178px;
+}
+.new-style .widget.size2 .widget-wrapper {
+    height: 392px;
+}
+
+.new-style #widgets .panel-edit {
+    bottom: 0;
+}
+.new-style .tp-shadow10 {
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.3);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,.3);
+    box-shadow: 0px 1px 3px rgba(0,0,0,.3);
+}
+.new-style #bookmarks .view-sketch .item-box:last-of-type {
+    display: none;
+}
+
+.new-style .bookmark-actions {
+    font-size: 14px;
+    font-family: 'Open Sans Semibold';
+    margin-top: 50px;
+}
+.bookmark-actions__container {
+    max-width:735px;
+    margin: 0 auto;
+}
+
+.bookmark-actions__hide,
+.bookmark-actions__add {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    text-shadow: rgba(0,0,0,0.7) 0 1px 20px;
+}
+.bookmark-actions__hide {
+    float: left;
+}
+.bookmark-actions__add {
+    float: right;
+}
+.bookmark-actions__hide:hover,
+.bookmark-actions__add:hover {
+    opacity: 0.8;
+}
+
+.bookmark-actions__hide-icon,
+.bookmark-actions__add-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    height: 14px;
+}
+.bookmark-actions__hide-icon {
+    background: url('/i/actions-hide-bookmarks.png') no-repeat center center;
+    width: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.bookmark-actions__add-icon {
+    background: url('/i/actions-add-bookmark.png') no-repeat center center;
+    width: 14px;
+}
+.new-style #group,
+.bookmark-actions__add-inner,
+.new-style #bookmarks {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+.bookmarks-off #group,
+.bookmarks-off .bookmark-actions__add-inner,
+.bookmarks-off #bookmarks {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.bookmarks-off .bookmark-actions__hide-icon {
+    transform: rotate(180deg);
+}
+
+
+body.bookmarks-off {
+    overflow-y: hidden;
+}

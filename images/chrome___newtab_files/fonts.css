@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/c/fonts/OpenSans-Regular-cyrillic.eot?') format('eot'),
+		url('/c/fonts/OpenSans-Regular-cyrillic.woff') format('woff'),
+		url('/c/fonts/OpenSans-Regular-cyrillic.ttf') format('truetype'),
+		url('/c/fonts/OpenSans-Regular-cyrillic.svg#Open Sans') format('svg');
+}
+@font-face {
+	font-family: 'Open Sans Semibold'; /* for fix ie6-8 */
+	font-style: normal;
+	font-weight: 400;
+	src: url('/c/fonts/OpenSans-Semibold-cyrillic.eot?') format('eot'),
+		url('/c/fonts/OpenSans-Semibold-cyrillic.woff') format('woff'),
+		url('/c/fonts/OpenSans-Semibold-cyrillic.ttf') format('truetype'),
+		url('/c/fonts/OpenSans-Semibold-cyrillic.svg#Open Sans') format('svg');
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/c/fonts/OpenSans-Bold-cyrillic.eot?') format('eot'),
+		url('/c/fonts/OpenSans-Bold-cyrillic.woff') format('woff'),
+		url('/c/fonts/OpenSans-Bold-cyrillic.ttf') format('truetype'),
+		url('/c/fonts/OpenSans-Bold-cyrillic.svg#Open Sans') format('svg');
+}

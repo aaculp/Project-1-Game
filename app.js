@@ -1,12 +1,15 @@
 window.onload = function () {
   //set const variables
 const body = document.body;
+let morty = document.createElement('div')
+morty.classList.add('morty')
 
 function createMorty() {
-  let morty = document.createElement('div')
-  morty.classList.add('morty')
   body.append(morty)
   // randomly moves morty
+
+  morty.addEventListener('click', gameLogic)
+
   function moveMorty(morty) {
     morty.style.bottom = Math.random() * window.innerLength + 'px'
     morty.style.left = Math.random() * window.innerWidth + 'px'
@@ -56,18 +59,13 @@ allcollapsed ();
 
 function allcollapsed () {
   let morty = document.querySelectorAll('.morty');
-  let rick = document.querySelector('.rick')
   let rocket = document.querySelector('#rocket');
-  for (let i=0; i < 5; i++) {
+  for (i = 0; i < 5; i++) {
     gameLogic(rocket, morty[i]);
   }
 }
 
-let morty = document.querySelectorAll('.morty');
-let rick = document.querySelector('.rick')
-let rocket = document.querySelector('#rocket');
-
-function gameLogic(rick, rocket, morty, bottom) {
+function gameLogic() {
  let rickTop = window.getComputedStyle(rick, null).getPropertyValue("top");
  let rickLeft = window.getComputedStyle(rick, null).getPropertyValue("left");
  let rickHeight = window.getComputedStyle(rick, null).getPropertyValue("height");
@@ -90,11 +88,11 @@ function gameLogic(rick, rocket, morty, bottom) {
  rocketWidth = parseInt(rocketWidth.split('px')[0])
  rocketBottom = parseInt(rocketBottom.split('px')[0])
 
- let mortyTop = window.getComputedStyle(morty, null).getPropertyValue("top");
- let mortyLeft = window.getComputedStyle(morty, null).getPropertyValue("left");
- let mortyHeight = window.getComputedStyle(morty, null).getPropertyValue("height");
- let mortyWidth = window.getComputedStyle(morty, null).getPropertyValue("width");
- let mortyBottom = window.getComputedStyle(morty, null).getPropertyValue("bottom");
+ let mortyTop = window.getComputedStyle(this, null).getPropertyValue("top");
+ let mortyLeft = window.getComputedStyle(this, null).getPropertyValue("left");
+ let mortyHeight = window.getComputedStyle(this, null).getPropertyValue("height");
+ let mortyWidth = window.getComputedStyle(this, null).getPropertyValue("width");
+ let mortyBottom = window.getComputedStyle(this, null).getPropertyValue("bottom");
  mortyTop = parseInt(mortyTop.split('px')[0])
  mortyLeft = parseInt(mortyLeft.split('px')[0])
  mortyHeight = parseInt(mortyHeight.split('px')[0])
@@ -108,7 +106,7 @@ function gameLogic(rick, rocket, morty, bottom) {
 
  if (mortyTop < rocketTop + rocketHeight && mortyTop + mortyHeight > rocketTop &&
     mortyLeft < rocketLeft + rocketWidth && mortyLeft + mortyWidth > rocketLeft) {
-  morty.remove()
+  this.remove()
   rocket.style.top = 10 + 'px'
   rocket.style.transition = 'none'
   setTimeout(function(){
@@ -127,7 +125,7 @@ function gameLogic(rick, rocket, morty, bottom) {
   }
 }
   setInterval(function(){
-   gameLogic(rocket, morty)
+   gameLogic()
   }, 0)
 
 }

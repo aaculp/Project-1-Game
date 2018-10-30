@@ -61,6 +61,14 @@ mortyWidth 60px
 mortyHeight 80px*/
 }
 
+#counter {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+}
+
 @keyframes move {
     0%{
    bottom: 0%;
