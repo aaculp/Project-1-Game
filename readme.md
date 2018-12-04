@@ -1,6 +1,5 @@
 # Project Overview
 ## Link To Project
-https://pages.git.generalassemb.ly/aaculp/My-First-Project/
 https://aaculp.github.io/Rick-Morty-Space-Invaders/
 ## Project Schedule
 ---
